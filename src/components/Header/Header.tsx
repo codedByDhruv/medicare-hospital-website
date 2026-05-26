@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
-interface HeaderProps {
-  activePage: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ activePage }) => {
+const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

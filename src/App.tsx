@@ -23,20 +23,10 @@ const ScrollToTop: React.FC = () => {
 };
 
 const AppContent: React.FC = () => {
-  const location = useLocation();
-
-  // Map standard slash paths back to IDs for Header active highlighters if needed
-  const getActiveId = () => {
-    const path = location.pathname.replace('/', '');
-    if (!path) return 'home';
-    if (path === 'testimonials') return 'testimonials';
-    return path;
-  };
-
   return (
     <>
       <ScrollToTop />
-      <Header activePage={getActiveId()} />
+      <Header />
       <main style={{ minHeight: 'calc(100vh - 450px)' }}>
         <Routes>
           <Route path="/" element={<Home />} />

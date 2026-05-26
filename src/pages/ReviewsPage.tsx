@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Testimonials from '../components/Testimonials/Testimonials';
 import './Pages.css';
 import './ReviewsPage.css';
 
