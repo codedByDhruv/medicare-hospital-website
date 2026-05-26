@@ -1,0 +1,231 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.96) 0%,
+    rgba(14, 165, 164, 0.88) 50%,
+    rgba(11, 122, 120, 0.75) 100%
+  ),
+  url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: var(--text-light);
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: 90px;
+  overflow: hidden;
+}
+
+/* Background floating shapes */
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-shape-1 {
+  width: 600px;
+  height: 600px;
+  top: -15%;
+  right: -10%;
+  animation: floatSlow 20s infinite alternate ease-in-out;
+}
+
+.hero-shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 5%;
+  left: -10%;
+  animation: floatSlow 14s infinite alternate-reverse ease-in-out;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulsing Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hero-badge .pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #f43f5e;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hero-badge .pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #f43f5e;
+  animation: ringPulse 1.8s infinite ease-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+  background: linear-gradient(to bottom right, #ffffff 60%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 44px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+.hero-buttons .btn-lg {
+  padding: 15px 36px;
+  font-size: 1.05rem;
+}
+
+/* Hero Stats Row */
+.hero-stats {
+  display: flex;
+  gap: 56px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 36px;
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform var(--transition-normal);
+}
+
+.hero-stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.hero-stat-item strong {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-stat-item span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 40px) scale(1.15);
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 80px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+  
+  .hero-stats {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-stat-item strong {
+    font-size: 1.6rem;
+  }
+}

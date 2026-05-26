@@ -1,0 +1,260 @@
+/* ---------- Premium Home Page Specific Styles ---------- */
+
+.bg-secondary-color {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Home teasers spacing */
+.home-teaser-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* ---------- "Why Choose" Section Grid ---------- */
+.why-choose-section {
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.why-card {
+  background-color: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 44px 36px;
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-icon-badge {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.12), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 2;
+}
+
+.premium-why-icon {
+  width: 36px;
+  height: 36px;
+  transition: all var(--transition-normal);
+}
+
+.why-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+.why-card p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Premium Hover Styling */
+/* Gold ACCREDITATIONS Theme */
+.why-card-gold:hover {
+  transform: translateY(-8px);
+  background-color: var(--bg-primary);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.12),
+              0 0 0 1px rgba(245, 158, 11, 0.05);
+}
+
+.why-card-gold:hover .why-icon-badge {
+  transform: scale(1.1) rotate(5deg);
+  background-color: rgba(245, 158, 11, 0.07);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15);
+}
+
+.why-card-gold:hover .premium-why-icon {
+  transform: scale(1.05);
+}
+
+/* Teal ROBOTIC SURGERY Theme */
+.why-card-teal:hover {
+  transform: translateY(-8px);
+  background-color: var(--bg-primary);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.12),
+              0 0 0 1px rgba(14, 165, 233, 0.05);
+}
+
+.why-card-teal:hover .why-icon-badge {
+  transform: scale(1.1) rotate(5deg);
+  background-color: rgba(14, 165, 233, 0.07);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.15);
+}
+
+.why-card-teal:hover .premium-why-icon {
+  transform: scale(1.05);
+}
+
+/* Purple VIP SUITES Theme */
+.why-card-purple:hover {
+  transform: translateY(-8px);
+  background-color: var(--bg-primary);
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.12),
+              0 0 0 1px rgba(139, 92, 246, 0.05);
+}
+
+.why-card-purple:hover .why-icon-badge {
+  transform: scale(1.1) rotate(5deg);
+  background-color: rgba(139, 92, 246, 0.07);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.15);
+}
+
+.why-card-purple:hover .premium-why-icon {
+  transform: scale(1.05);
+}
+
+/* ---------- Bottom Booking CTA Banner ---------- */
+.booking-banner-section {
+  background-color: var(--bg-primary);
+  padding: 80px 0;
+}
+
+.booking-banner-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+  border-radius: 30px;
+  padding: 60px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glowing bubble backdrop inside Booking card */
+.booking-banner-glow {
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 164, 0.25) 0%, rgba(255,255,255,0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.booking-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-banner-content h2 {
+  font-size: 2.8rem;
+  font-weight: 850;
+  color: var(--text-light);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, #ffffff 60%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.booking-banner-content p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.booking-banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* White Booking Button */
+.btn-white-btn {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-white-btn:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+}
+
+/* Outline Banner Button */
+.btn-outline-banner {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline-banner:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .booking-banner-card {
+    padding: 44px 30px;
+  }
+  
+  .booking-banner-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .booking-banner-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .booking-banner-buttons .btn {
+    width: 100%;
+  }
+}
